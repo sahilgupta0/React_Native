@@ -3,24 +3,30 @@ import React, { useState } from 'react'
 
 import CurrencyButton from './component/CurrencyButton'
 import { currencyByRupee } from './constant'
-
-
-
+import { useToast } from 'react-native-toast-notifications';
 
 export default function App() {
-
+	const toast = useToast(); // ✅ Get toast instance
 
 	const [value, setValue] = useState(0)
 	const [input, setInput] = useState('')
-	const [isVisible , setIsVisible] = useState(false)
+	const [isVisible, setIsVisible] = useState(false)
 
 	const buttonPressed = (rate: number) => {
-		if (input.trim() == "") {
-			Alert.alert("Please Enter Amount")
+		if (input.trim() == "" || Number(input) < 0) {
+			toast.show('Invalid Input!', {
+				type:"warning",
+				placement: "bottom",
+				duration: 4000,
+				animationType: "zoom-in",
+			});
 		}
-		const show = Number((rate * Number(input)).toFixed(2))
-		setValue(show)
-		setIsVisible(true)
+		else {
+
+			const show = Number((rate * Number(input)).toFixed(2))
+			setValue(show)
+			setIsVisible(true)
+		}
 	}
 
 	const resetButton = () => {
@@ -30,13 +36,14 @@ export default function App() {
 	}
 
 	return (
+
 		<View style={styles.container}>
 			<View style={styles.subContainer}>
 
 				{isVisible && <Text style={styles.hidden}>{value}</Text>}
-				<TextInput 
-					style={styles.input} 
-					placeholder='Amount' 
+				<TextInput
+					style={styles.input}
+					placeholder='Amount'
 					value={input}
 					onChangeText={(text) => setInput(text)}
 					keyboardType='number-pad'
@@ -68,6 +75,7 @@ export default function App() {
 
 			</View>
 		</View>
+
 	)
 }
 
@@ -76,48 +84,48 @@ const styles = StyleSheet.create({
 
 	},
 	subContainer: {
-		marginTop:15,
-		alignItems:'center',
+		marginTop: 15,
+		alignItems: 'center',
 		marginBottom: 30
-		
+
 
 	},
 	input: {
 		padding: 10,
 		borderRadius: 5,
-		borderWidth:3,
+		borderWidth: 3,
 		borderColor: '#616C6F',
-		width:'50%',
-		fontSize:20,
+		width: '50%',
+		fontSize: 20,
 
 	},
 	hidden: {
 		fontSize: 30,
 		fontWeight: 'bold',
-		margin:10
+		margin: 10
 
 	},
 	button: {
 
 	},
-	reset:{
-		marginTop:20,
-		justifyContent:'center',
-		alignItems:'center'
-		
-	},
-	resetText:{
-		borderWidth:3,
-		borderColor:'#43BE31',
-		backgroundColor:'yellow',
-		borderRadius:5,
-		fontSize:20,
-		fontWeight:'bold',
-		textAlign:'center',
-		padding:4,
-		paddingHorizontal:40,
+	reset: {
+		marginTop: 20,
+		justifyContent: 'center',
+		alignItems: 'center'
 
-		
+	},
+	resetText: {
+		borderWidth: 3,
+		borderColor: '#43BE31',
+		backgroundColor: 'yellow',
+		borderRadius: 5,
+		fontSize: 20,
+		fontWeight: 'bold',
+		textAlign: 'center',
+		padding: 4,
+		paddingHorizontal: 40,
+
+
 	}
 
 
