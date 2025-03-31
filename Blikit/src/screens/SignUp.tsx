@@ -29,7 +29,7 @@ const SignUp = ({navigation}: SignUpProps) => {
   };
 
   const goToHome = () => {
-    navigation.navigate(Tabs.name);
+    navigation.navigate("Tabs");
   };
 
   return (
@@ -64,7 +64,7 @@ const SignUp = ({navigation}: SignUpProps) => {
           </Text>
         </View>
         <Button
-          onPress={goToHome}
+          onPress={() => goToHome()}
           bgColour="#53B175"
           txtColour="#FFF"
           text="Sign up"
@@ -131,4 +131,4 @@ const styles = EStyleSheet.create({
   },
 });
 
-export default {component: SignUp, name: 'SignUp'};
+export default SignUp;

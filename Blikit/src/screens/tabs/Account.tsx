@@ -143,4 +143,4 @@ const styles = EStyleSheet.create({
   },
 });
 
-export default {component: AccountTab, name: 'Account'};
+export default  AccountTab;

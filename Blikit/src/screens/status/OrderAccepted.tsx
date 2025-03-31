@@ -87,4 +87,4 @@ const style = EStyleSheet.create({
   },
 });
 
-export default {component: OrderAccepted, name: 'OrderAccepted'};
+export default OrderAccepted;

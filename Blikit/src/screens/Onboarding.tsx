@@ -14,7 +14,7 @@ interface OnboardingProps {
 
 const Onboarding = ({navigation}: OnboardingProps) => {
   const nextScreen = () => {
-    navigation.navigate(SignIn.name);
+    navigation.navigate('SignIn');
   };
 
   return (
@@ -72,4 +72,4 @@ const styles = EStyleSheet.create({
   },
 });
 
-export default {component: Onboarding, name: 'Onboarding'};
+export default Onboarding;

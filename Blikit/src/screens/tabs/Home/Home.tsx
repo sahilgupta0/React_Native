@@ -1,9 +1,12 @@
 import React from 'react';
 import {Text, View, ScrollView, Dimensions, Image} from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import LogoColour from '../../../../assets/images/logo-colour.png';
+
+const LogoColour = require('../../../../assets/images/logo-colour.png');
+const Banner = require('../../../../assets/images/home_screen/banner.png');
 import LocationPin from '../../../../assets/icons/home_screen/location-pin.svg';
-import Banner from '../../../../assets/images/home_screen/banner.png';
+
+
 import SearchBar from '../../../components/SearchBar';
 import SectionTitle from './SectionTitle';
 import FoodCard from '../../../components/FoodCard';
@@ -25,7 +28,8 @@ const Home = ({navigation}: HomeProps) => {
         </View>
       </View>
       <View style={[styles.localBox, styles.searchBox]}>
-        <SearchBar navigation={navigation} navigateTo="search-page" />
+      <SearchBar navigation={navigation} navigateTo="search-page" />
+
       </View>
       <View style={styles.localBox}>
         <Image style={styles.banner} source={Banner} />
@@ -114,4 +118,4 @@ const styles = EStyleSheet.create({
   },
 });
 
-export default {component: Home, name: 'Home'};
+export default Home;

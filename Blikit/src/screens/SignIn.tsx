@@ -26,11 +26,11 @@ const Signin = ({navigation}: SignInProps) => {
   const behavior = Platform.OS === 'ios' ? 'padding' : undefined;
 
   const goToSignUp = () => {
-    navigation.navigate(SignUp.name);
+    navigation.navigate("SignUp");
   };
 
   const goToHome = () => {
-    navigation.navigate(Tabs.name);
+    navigation.navigate("Tabs");
   };
 
   return (
@@ -53,14 +53,14 @@ const Signin = ({navigation}: SignInProps) => {
           <Text style={styles.infoText}>Forgot your password?</Text>
         </TouchableOpacity>
         <Button
-          onPress={goToHome}
+          onPress={() => goToHome()}
           bgColour="#53B175"
           txtColour="#FFF"
           text="Sign in"
         />
         <View style={styles.footer}>
           <Text style={styles.infoText}>Don’t have an account?</Text>
-          <TouchableOpacity onPress={goToSignUp}>
+          <TouchableOpacity onPress={() => goToSignUp()}>
             <Text style={[styles.infoText, styles.greenInfoText]}>Sign up</Text>
           </TouchableOpacity>
         </View>
@@ -117,4 +117,4 @@ const styles = EStyleSheet.create({
   },
 });
 
-export default {component: Signin, name: 'Signin'};
+export default Signin;

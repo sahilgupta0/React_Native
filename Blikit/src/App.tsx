@@ -9,7 +9,7 @@ import SignUp from './screens/SignUp';
 import Tabs from './screens/Tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import OrderAccepted from './screens/status/OrderAccepted';
+// import OrderAccepted from './screens/status/OrderAccepted';
 
 const {Navigator, Screen} = createStackNavigator();
 
@@ -23,16 +23,16 @@ const App = () => {
           screenOptions={{
             headerShown: false,
           }}>
-          <Screen name={Onboarding.name} component={Onboarding.component} />
-          <Screen name={SignIn.name} component={SignIn.component} />
-          <Screen name={SignUp.name} component={SignUp.component} />
-          <Screen name={Tabs.name} component={Tabs.component} />
+          <Screen name="Onboarding" component={Onboarding} />
+          <Screen name="SignIn" component={SignIn} />
+          <Screen name="SignUp" component={SignUp} />
+          <Screen name="Tabs" component={Tabs} />
 
           {/* Temporary */}
-          <Screen
+          {/* <Screen
             name={OrderAccepted.name}
             component={OrderAccepted.component}
-          />
+          /> */}
         </Navigator>
       </NavigationContainer>
     </>

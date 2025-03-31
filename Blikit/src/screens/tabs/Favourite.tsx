@@ -9,4 +9,4 @@ const FavouriteTab = () => {
   );
 };
 
-export default {component: FavouriteTab, name: 'Favourite'};
+export default FavouriteTab;

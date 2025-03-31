@@ -32,14 +32,14 @@ const Tabs = () => {
         },
       
         activeTintColor: '#53B175',
-        inactiveTintColor: '#181725',
+        inactiveTintColor: '#1  81725',
         labelStyle: style.tabBarLabelStyle,
       })}>
-      <Screen name={Home.name} component={Home.component} />
-      <Screen name={Explore.name} component={Explore.component} />
-      <Screen name={Cart.name} component={Cart.component} />
-      <Screen name={Favourite.name} component={Favourite.component} />
-      <Screen name={Account.name} component={Account.component} />
+      <Screen name = "Home" component={Home} />
+      <Screen name="Explore" component={Explore} />
+      <Screen name="Cart" component={Cart} />
+      <Screen name="Favourite" component={Favourite} />
+      <Screen name="Account" component={Account} />
     </Navigator>
   );
 };
@@ -52,4 +52,4 @@ const style = EStyleSheet.create({
   },
 });
 
-export default {component: Tabs, name: 'Tabs'};
+export default Tabs;

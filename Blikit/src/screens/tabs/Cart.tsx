@@ -9,4 +9,4 @@ const CartTab = () => {
   );
 };
 
-export default {component: CartTab, name: 'Cart'};
+export default CartTab;
